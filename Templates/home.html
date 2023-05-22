@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block blogContent %}
+
+<main>
+    <article>
+        <ul>
+            {% for post in all_blogs_list %}
+                <li><h2><a href= "{% url 'blog' post.pk %}">{{ post.title }}</a></h2></li>
+                <p>{{ post.body | slice:20 }}...</p>
+            {% endfor %}
+        </ul>
+    </article>
+</main>
+
+{% endblock blogContent %}
