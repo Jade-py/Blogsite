@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block blogContent %}
+
+<h1>Dashboard</h1>
+<h3>Hii!! {{user.username}}</h3>
+
+<ul>
+    <li><a href="{% url 'newBlog' %}">Add Post</a></li>
+    <li><a href="{% url 'userPosts' %}">My Posts</a></li>
+    <li><a href="{% url 'editUser' %}">Edit Profile</a></li>
+    <li><a href="{% url 'logout' %}">Log Out</a></li>
+</ul>
+
+{% endblock blogContent %}

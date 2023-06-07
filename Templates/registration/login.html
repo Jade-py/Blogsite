@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block blogContent %}
+
+<h1>Log In</h1>
+<h2>to post your own blog or comment on other posts</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type ="submit">Log in</button>
+</form>
+
+<p>Dont have an account? <a href="{% url 'Signup' %}">Sign Up</a></p>
+
+{% endblock blogContent %}

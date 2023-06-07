@@ -13,16 +13,20 @@
       <nav>
         <ul>
           <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'newBlog' %}">Add Post</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'user' %}">{{user.username}}</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}">Log in</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>
     {% block blogContent %}
     {% endblock blogContent %}
     <footer>
-      <p>&copy; My Blog 2023</p>
+      <p>&copy; My Blog {% now Y %}</p>
     </footer>
   </body>
 </html>
